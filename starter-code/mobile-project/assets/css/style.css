@@ -1,7 +1,8 @@
-* {
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: #fefefe;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 :root {
@@ -11,90 +12,54 @@
     --color-gray: #9194a1;
     --color-light-gray: #f7f7f7;
     --color-white: #ffffff;
-    
-    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Rubik', sans-serif;
-    --font-size-base: 16px;
-    
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
-    
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 16px;
 }
 
-/* Checkbox oculto */
-#menu-toggle {
-  display: none;
-}
-
-/* Icono de hamburguesa con imagen */
-.hamburger {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.hamburger img {
-  width: 50%;
-  height: 50%;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-/* Animación opcional: girar icono cuando se abre */
-#menu-toggle:checked + .hamburger img {
-  transform: rotate(90deg); /* o cualquier efecto que quieras */
-}
-
-/* Menú full-screen */
-.menu {
-  position: fixed;
-    font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 6px; 
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-primary);
-  opacity: 50%;
+.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  transform: translateX(100%);
-  transition: transform 0.4s ease;
-  z-index: 1000;
+  padding: 30px 60px;
 }
 
-#menu-toggle:checked ~ .menu {
-  transform: translateX(0);
+.bookmark  {
+  width: 40%;
+  height: 40%;
 }
 
-/* Lista del menú */
-.menu ul {
-  list-style: none;
+.hamburger  {
+  width:  5%;
+  height: 5%;
+  cursor: pointer;
+}
+
+.hero{
+  padding: 20px 40px;
+  padding-top: 65px;
+  margin-bottom: 0;
+}
+
+.imghero  {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.cuadro {      
+  margin-top: 0;
   text-align: center;
+  padding: 0 20px;
 }
 
-.menu ul li {
-  margin: 20px 0;
+.cuadro h1 {
+ font-size: 40px;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 25px;
+}
+.cuadro p {
+ font-size: 15px;
+  font-weight: 500;
+  color: var(--color-gray);
+  margin-bottom: 25px;
 }
 
-.menu ul li a {
-  color: #fff;
-  font-size: 2rem;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.menu ul li a:hover {
-  color: #ff4081;
-}
