@@ -189,9 +189,9 @@ nav li {
   width: 65%;
   padding: 1.2em 1.25rem;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.10rem;
   font-weight: 500;
-  color: #54555c;
+  color: var(--color-gray);
   background-color: #fff;
   cursor: pointer;
   border: none;
@@ -211,7 +211,7 @@ nav li {
   bottom: 0;
   width: 0;                /* empieza sin línea */
   height: 4px;             /* grosor línea roja */
-  background-color: red;
+  background-color: var(--color-secondary);
   transition: width 0.2s ease, left 0.2s ease;
   transform: translateX(-50%); /* centrar la línea */
 }
@@ -220,7 +220,6 @@ nav li {
 .botonesfeatures input[type="radio"]:checked + label {
   font-weight: 700; /* letra más negrita */
 }
-
 
 /* Línea roja al seleccionar, solo 50% centrada */
 .botonesfeatures input[type="radio"]:checked + label::after {
