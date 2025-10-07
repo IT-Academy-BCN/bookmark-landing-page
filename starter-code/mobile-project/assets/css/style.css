@@ -393,7 +393,7 @@ header {
 .cuadrotextoemail {
   line-height: 1.2;
   background-color: var(--color-primary);
-  padding: 8.25rem .5rem;
+  padding: 3rem 1.5rem;
   width: 100vw;
   margin: 0;
   box-sizing: border-box;
@@ -401,21 +401,27 @@ header {
 
 .cuadrotextoemail h2 {
   color: var(--color-white);
+  margin: 0.75rem 0 2.5rem 0;
+  font-size: 1.5rem;
 }
 
 .cuadrotextoemail p {
-
   color: var(--color-white);
-  margin-bottom: 1.25rem;
+  margin-top: 1rem;
+
+}
+
+.emailbox {
+  padding: 1rem 2.25rem;
 }
 
 .btncontactus {
   background-color: var(--color-secondary);
   color: var(--color-white);
   border: none;
-  padding: 1rem 1.5rem;
+  padding: 1rem 7.5rem;
   border-radius: 0.375rem; /* antes 6px */
-  font-size: 0.8rem;
+  font-size: var(--p-font-size);
   cursor: pointer;
   width: 100%;
   max-width: fit-content;
@@ -425,11 +431,13 @@ header {
 }
 
 .cuadrotextofooter {
-  font-size: 1.8rem;
-  line-height: 1.2;
+  display: flex; /* NECESARIO para activar Flexbox */
+  flex-direction: column; /* Organiza los hijos de arriba hacia abajo */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: space-evenly; /* Espacia verticalmente a lo largo del alto disponible */
   background-color: var(--color-primary2);
-  padding: 8.25rem .5rem;
-  width: 100vw;           /* ancho de toda la ventana */
+  width: 100vw;
   margin: 0;
   box-sizing: border-box;
+  min-height: 360px;
 }
