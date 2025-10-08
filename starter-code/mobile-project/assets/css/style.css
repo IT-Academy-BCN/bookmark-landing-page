@@ -3,7 +3,7 @@
 /* ------------------------------ */
 :root {
   --color-primary: #5368df;
-  --color-primary2: #192566b2;
+  --color-primary2: #242946;
   --color-secondary: #fa5757;
   --color-dark: #242a45;
   --color-gray: #9194a1;
@@ -21,6 +21,9 @@
   --buttons-font-weight: 700;
 }
 
+/* ------------------------------ */
+/* TIPOGRAFÍA                     */
+/* ------------------------------ */
 h1 {
   font-size: var(--h1-font-size);
   font-weight: var(--h1-font-weight);
@@ -37,13 +40,19 @@ p {
   font-weight: var(--p-font-weight);
 }
 
-
+/* ------------------------------ */
+/* RESET Y OUTLINES               */
+/* ------------------------------ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* outline: 1px solid red !important; */
 }
 
+/* ------------------------------ */
+/* BODY                           */
+/* ------------------------------ */
 body {
   font-family: "Rubik";
   background-color: var(--color-white);
@@ -51,14 +60,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* centra verticalmente */
+  justify-content: center;
   min-height: 100vh;
   text-align: center;
   padding: 1rem;
 }
 
 /* ------------------------------ */
-/* HEADER                         */
+/* HEADER / NAVBAR                */
 /* ------------------------------ */
 header {
   width: 100%;
@@ -69,19 +78,21 @@ header {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 90%;
-  max-width: 25rem; /* antes 400px */
+  width: 100%;
+  max-width: 25rem;
+  gap: 8.5rem;
 }
 
 .navbar .bookmark {
-  width: 8rem; /* antes 28px */
+  width: 8rem;
   height: auto;
+  
 }
 
 .navbar .hamburger {
-  width: 1rem; /* antes 28px */
+  width: 1rem;
   height: auto;
 }
 
@@ -112,16 +123,16 @@ header {
 
 .cuadrotextohero p {
   color: var(--color-gray);
-  margin: 1.5rem 0 1.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .botones {
   display: flex;
-  flex-direction: row ; 
-  align-items: center;    /* centra horizontalmente */
-  justify-content: center; /* opcional, centra vertical si el contenedor tiene altura */
-  gap: 0.8rem;            /* espacio entre botones */
-  width: 100%;            /* ocupa todo el ancho disponible */
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
 }
 
 .btnbrowser {
@@ -129,7 +140,7 @@ header {
   color: var(--color-dark);
   border: none;
   padding: 1rem 1.5rem;
-  border-radius: 0.375rem; /* antes 6px */
+  border-radius: 0.375rem;
   box-shadow: 0px 10px 15px 0px var(--color-shadow);
   font-size: 0.85rem;
   cursor: pointer;
@@ -143,8 +154,6 @@ header {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
-
-
 
 /* ------------------------------ */
 /* FEATURES SECTION               */
@@ -168,6 +177,7 @@ header {
   margin-bottom: 2rem;
 }
 
+/* BOTONES FEATURES */
 .botonesfeatures { 
   display: flex; 
   flex-direction: column; 
@@ -189,7 +199,6 @@ header {
   cursor: pointer; 
   border: none; 
   border-bottom: 1px solid #ccc;
-
 }
 
 /* Línea superior solo en el primer botón */
@@ -197,46 +206,45 @@ header {
   border-top: 1px solid #ccc; 
 }
 
-/* Línea roja usando ::after */
+/* Línea roja ::after */
 .botonesfeatures label::after { 
   content: ""; 
   position: absolute; 
-  left: 50%;          /* centro horizontal */
+  left: 50%; 
   bottom: 0; 
-  width: 0;           /* empieza sin línea */
-  height: 4px;        /* grosor línea roja */
+  width: 0; 
+  height: 4px; 
   background-color: var(--color-secondary); 
   transition: width 0.2s ease, left 0.2s ease; 
-  transform: translateX(-50%); /* centrar la línea */
+  transform: translateX(-50%); 
 }
 
-/* Botón seleccionado */
 .botonesfeatures input[type="radio"]:checked + label { 
   color: var(--color-dark);
 }
 
-/* Línea roja al seleccionar, solo 50% centrada */
 .botonesfeatures input[type="radio"]:checked + label::after { 
-  width: 50%; /* solo la mitad del ancho */ 
+  width: 50%;
 }
 
+/* IMÁGENES Y TEXTOS TABS */
+.imagenestabsfeatures img,
+.cuadrotextotabs > div {
+  display: none;
+  margin-top: 3rem;
+}
 
-.imagenestabsfeatures img {
+#btn1:checked ~ .imagenestabsfeatures .imgtab1,
+#btn2:checked ~ .imagenestabsfeatures .imgtab2,
+#btn3:checked ~ .imagenestabsfeatures .imgtab3 {
+  display: block;
   width: 100%;
-  max-width: 18.75rem; /* antes 300px */
-  margin: 2rem 0;
 }
 
-.imgtab1 {
-  width: 90%;
-  max-width: 21.875rem;
-  height: auto;
-}
-
-.cuadrotextotabs {
-  margin-top: 2rem;
-  text-align: center;
-  padding: 0 1.25rem;
+#btn1:checked ~ .cuadrotextotabs .texttab1,
+#btn2:checked ~ .cuadrotextotabs .texttab2,
+#btn3:checked ~ .cuadrotextotabs .texttab3 {
+  display: block;
 }
 
 .cuadrotextotabs h1 {
@@ -255,10 +263,9 @@ header {
 
 @media (min-width: 768px) {
   .cuadrotextotabs {
-    margin-top: 9.375rem;
+    margin-top: 1.375rem;
   }
 }
-
 
 /* ------------------------------ */
 /* DOWNLOADS SECTION              */
@@ -284,11 +291,10 @@ header {
 .cuadrotextochrome,
 .cuadrotextofirefox,
 .cuadrotextopera {
-  margin: 0 auto;
+  margin: 0 auto 4rem auto;
   background-color: var(--color-white);
   border-radius: 0.625rem; 
   padding: 2rem;
-  margin-bottom: 4rem;
   width: 100%;
   max-width: 18rem;
   box-shadow: 0px 10px 15px 0px var(--color-shadow);
@@ -299,7 +305,6 @@ header {
   height: auto;
   display: block;
 }
-
 
 .cuadrotextochrome h1,
 .cuadrotextofirefox h1,
@@ -337,46 +342,53 @@ header {
 }
 
 .faq-section p {
-  margin: 2rem 0;
+  margin: 2rem 0 4rem 0;
   color: var(--color-gray);
 }
 
 .faq-item {
-  border-bottom: 0.0625rem solid #ccc; /* antes 1px */
+  border-bottom: 0.0625rem solid #ccc;
   text-align: left;
   padding: 1rem 0;
 }
 
 .faq-item summary {
-  font-weight: var(--p-font-weight);
-  cursor: pointer;
+  list-style: none; /* ocultar marcador predeterminado */
   position: relative;
-  list-style: none;
 }
 
 .faq-item summary::-webkit-details-marker {
-  display: none;
+  display: none; /* Chrome/Safari */
 }
 
+/* Reemplazar flecha con imagen */
 .faq-item summary::after {
-  content: "▾";
+  content: "";
   position: absolute;
   right: 0;
-  font-size: 1rem;
-  color: var(--color-primary);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;  /* ancho de tu imagen */
+  height: 16px; /* alto de tu imagen */
+  background-image: url('../img/icon-arrow.svg'); /* ruta a tu imagen */
+  background-size: contain;
+  background-repeat: no-repeat;
   transition: transform 0.3s ease;
 }
 
+/* Girar la flecha al abrir */
 .faq-item[open] summary::after {
-  transform: rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+  filter: invert(22%) sepia(83%) saturate(7487%) hue-rotate(348deg) brightness(95%) contrast(95%);
 }
+
 
 .btninfo {
   background-color: var(--color-primary);
   color: var(--color-white);
   border: none;
   padding: 1rem 1.5rem;
-  border-radius: 0.375rem; /* antes 6px */
+  border-radius: 0.375rem;
   font-size: 0.8rem;
   cursor: pointer;
   width: 100%;
@@ -387,10 +399,12 @@ header {
 }
 
 /* ------------------------------ */
-/* FOOTER SECTION                    */
+/* FOOTER SECTION                 */
 /* ------------------------------ */
-
 .cuadrotextoemail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   line-height: 1.2;
   background-color: var(--color-primary);
   padding: 3rem 1.5rem;
@@ -408,7 +422,7 @@ header {
 .cuadrotextoemail p {
   color: var(--color-white);
   margin-top: 1rem;
-
+  letter-spacing: 0.35em;
 }
 
 .emailbox {
@@ -420,7 +434,7 @@ header {
   color: var(--color-white);
   border: none;
   padding: 1rem 7.5rem;
-  border-radius: 0.375rem; /* antes 6px */
+  border-radius: 0.375rem;
   font-size: var(--p-font-size);
   cursor: pointer;
   width: 100%;
@@ -431,13 +445,34 @@ header {
 }
 
 .cuadrotextofooter {
-  display: flex; /* NECESARIO para activar Flexbox */
-  flex-direction: column; /* Organiza los hijos de arriba hacia abajo */
-  align-items: center; /* Centra horizontalmente */
-  justify-content: space-evenly; /* Espacia verticalmente a lo largo del alto disponible */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   background-color: var(--color-primary2);
   width: 100vw;
   margin: 0;
   box-sizing: border-box;
   min-height: 360px;
+  color: var(--color-white);
+  
+}
+.cuadrotextofooter .smicons {
+  display: flex;           /* activa flexbox */
+  flex-direction: row;     /* pone los hijos en fila */
+  gap: 10px;               /* espacio entre iconos */
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  gap: 3rem;
+}
+
+.logo-text {
+  fill: white; /* letras en blanco */
+}
+
+/* ------------------------------ */
+/* MEDIA QUERIES (desktop)        */
+/* ------------------------------ */
+@media (min-width: 1024px) {
+  /* Estructura lista para agregar estilos de escritorio */
 }
