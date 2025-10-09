@@ -404,8 +404,7 @@ header {
 /* FOOTER SECTION                 */
 /* ------------------------------ */
 .cuadrotextoemail {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
   line-height: 1.2;
   background-color: var(--color-primary);
@@ -427,11 +426,28 @@ header {
   letter-spacing: 0.35em;
 }
 
-.emailbox {
-  padding: 1rem 2.25rem;
+.emailbox{
+  display: grid;
+  place-items: center; 
+}
+.email-input {
+  position: relative;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  border: none;
+  padding: 1rem 7.5rem;
+  border-radius: 0.375rem;
+  font-size: var(--p-font-size);
+  cursor: pointer;
+  width: 100%;
+  max-width: fit-content;
+  text-align: center;
+  font-weight: var(--h1-font-weight);
+  width: 305px;
+  margin-top: 0.2rem;
 }
 
-.btncontactus {
+.submit-btn {
   background-color: var(--color-secondary);
   color: var(--color-white);
   border: none;
@@ -443,7 +459,24 @@ header {
   max-width: fit-content;
   text-align: center;
   font-weight: var(--h1-font-weight);
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+.email-wrapper {
+  color: #fff;
+  background-color: #fa5757;
+  border-radius: 8px 8px 8px 8px;
+  font-size: 8px;
+  font-style: italic;
+  width: 309px;
+  height: 75px;
+}
+
+.email-wrapper p {
+  text-align: left;
+  margin: 0 0 0 0.5rem;
+  font-size: 9px;
+  color: var(--color-white);
 }
 
 .cuadrotextofooter {
